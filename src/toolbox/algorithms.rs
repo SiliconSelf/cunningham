@@ -1,9 +1,8 @@
-//! Various helper functions used in the program
+//! Useful algorithms used throughout the program
 
-use rten_imageio::read_image;
-use rten_tensor::NdTensor;
-
-/// A basic recursive implementation of [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+/// A basic recursive implementation of
+/// [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+/// to find the difference between two Strings
 ///
 /// This function is recursive and generally inefficient
 pub(crate) fn levenshtein_distance(a: &str, b: &str) -> usize {
@@ -36,22 +35,4 @@ pub(crate) fn levenshtein_distance(a: &str, b: &str) -> usize {
         }
     });
     1 + options_min
-}
-
-/// A source that can provide an image to the OCR system
-pub(crate) trait ImageSource {
-    /// Load the image into a 3D tensor
-    fn load(&self) -> NdTensor<f32, 3>;
-}
-
-/// An image stored as a file
-pub(crate) struct LocalImage {
-    /// The path the image is stored at
-    pub(crate) path: &'static str,
-}
-
-impl ImageSource for LocalImage {
-    fn load(&self) -> NdTensor<f32, 3> {
-        read_image(self.path).expect("Failed to load")
-    }
 }

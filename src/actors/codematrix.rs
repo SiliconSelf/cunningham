@@ -1,6 +1,6 @@
 use actix::prelude::*;
 
-use crate::toolbox::levenshtein_distance;
+use crate::toolbox::algorithms::levenshtein_distance;
 
 /// Symbols that can appear in the code matrix
 #[derive(Debug)]

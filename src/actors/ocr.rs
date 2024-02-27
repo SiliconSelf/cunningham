@@ -3,7 +3,7 @@ use ocrs::{OcrEngine, OcrEngineParams};
 use rten::Model;
 use rten_tensor::AsView;
 
-use crate::{actors::codematrix::CodeMatrix, toolbox::ImageSource};
+use crate::{actors::codematrix::CodeMatrix, toolbox::ocr::ImageSource};
 
 /// An actor for all OCR requests
 pub(crate) struct OcrActor {

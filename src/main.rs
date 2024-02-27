@@ -6,7 +6,7 @@ use actors::{
     ocr::{OcrActor, RecognizeCodeMatrix},
 };
 
-use crate::toolbox::LocalImage;
+use crate::toolbox::ocr::LocalImage;
 
 mod actors;
 mod toolbox;
