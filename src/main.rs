@@ -1,13 +1,15 @@
 #![doc = include_str!("../README.md")]
 
-use actors::{codematrix::CodeMatrix, ocr::{OcrActor, RecognizeCodeMatrix}};
-
 use actix::prelude::*;
+use actors::{
+    codematrix::CodeMatrix,
+    ocr::{OcrActor, RecognizeCodeMatrix},
+};
 
 use crate::toolbox::LocalImage;
 
-mod toolbox;
 mod actors;
+mod toolbox;
 
 #[actix::main]
 async fn main() {
@@ -16,7 +18,14 @@ async fn main() {
     let ocr_actor_addr = OcrActor::new().start();
 
     let path = "res/matrixtest.jpg";
-    let code_matrix: Vec<Vec<CodeMatrix>> = ocr_actor_addr.send(RecognizeCodeMatrix { source: LocalImage { path } }).await.unwrap();
+    let code_matrix: Vec<Vec<CodeMatrix>> = ocr_actor_addr
+        .send(RecognizeCodeMatrix {
+            source: LocalImage {
+                path,
+            },
+        })
+        .await
+        .unwrap();
 
     println!("{code_matrix:#?}");
 

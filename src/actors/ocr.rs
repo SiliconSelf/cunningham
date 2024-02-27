@@ -42,7 +42,7 @@ impl OcrActor {
 #[rtype(result = "Vec<Vec<CodeMatrix>>")]
 pub(crate) struct RecognizeCodeMatrix<I: ImageSource> {
     /// The image data source
-    pub(crate) source: I
+    pub(crate) source: I,
 }
 
 impl<I: ImageSource> Handler<RecognizeCodeMatrix<I>> for OcrActor {
@@ -70,20 +70,20 @@ impl<I: ImageSource> Handler<RecognizeCodeMatrix<I>> for OcrActor {
             .recognize_text(&ocr_input, &line_rects)
             .expect("Failed to recognize text");
         let lines = line_texts
-        .iter()
-        .flatten()
-        .map(std::string::ToString::to_string)
-        .filter(|l| l.len() > 1);
-    let mut code_matrix = Vec::new();
-    for line in lines {
-        let mut matrix_line = Vec::new();
-        for symbol in line.split(' ') {
-            let symbol = CodeMatrix::from(symbol);
-            matrix_line.push(symbol);
+            .iter()
+            .flatten()
+            .map(std::string::ToString::to_string)
+            .filter(|l| l.len() > 1);
+        let mut code_matrix = Vec::new();
+        for line in lines {
+            let mut matrix_line = Vec::new();
+            for symbol in line.split(' ') {
+                let symbol = CodeMatrix::from(symbol);
+                matrix_line.push(symbol);
+            }
+            code_matrix.push(matrix_line);
         }
-        code_matrix.push(matrix_line);
-    }
 
-    code_matrix
+        code_matrix
     }
 }

@@ -3,7 +3,6 @@
 use rten_imageio::read_image;
 use rten_tensor::NdTensor;
 
-
 /// A basic recursive implementation of [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
 ///
 /// This function is recursive and generally inefficient
@@ -48,7 +47,7 @@ pub(crate) trait ImageSource {
 /// An image stored as a file
 pub(crate) struct LocalImage {
     /// The path the image is stored at
-    pub(crate) path: &'static str
+    pub(crate) path: &'static str,
 }
 
 impl ImageSource for LocalImage {
