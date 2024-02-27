@@ -2,7 +2,10 @@
 
 /// A basic recursive implementation of
 /// [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
-/// to find the difference between two Strings
+/// to find the difference between two Strings. This is used within the program
+/// to identify what OCR is recognizing. Because OCR is imperfect, direct
+/// output is often wrong by a few characters. We want to find the closest
+/// possible match to what is actually in the game.
 ///
 /// This function is recursive and generally inefficient
 pub(crate) fn levenshtein_distance(a: &str, b: &str) -> usize {
