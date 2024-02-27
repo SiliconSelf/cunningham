@@ -25,7 +25,7 @@ async fn main() {
             },
         })
         .await
-        .unwrap();
+        .expect("Sending message to OCR actor failed");
 
     println!("{code_matrix:#?}");
 
