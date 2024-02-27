@@ -17,6 +17,6 @@ pub(crate) struct LocalImage {
 
 impl ImageSource for LocalImage {
     fn load(&self) -> NdTensor<f32, 3> {
-        read_image(self.path).expect("Failed to load")
+        read_image(self.path).expect("Failed to load provided image path")
     }
 }
