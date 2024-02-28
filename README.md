@@ -1,3 +1,3 @@
-# `cpah-rs`
+# `Cunningham`
 
 Cyberpunk Autohack
