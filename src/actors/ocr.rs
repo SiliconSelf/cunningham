@@ -117,7 +117,7 @@ impl<I: ImageSource> Handler<RecognizeCodeMatrix<I>> for OcrActor {
 #[rtype(result = "Vec<Daemon>")]
 pub(crate) struct RecognizeDaemons<I: ImageSource> {
     /// The image data source
-    source: I
+    pub(crate) source: I
 }
 
 impl<I: ImageSource> Handler<RecognizeDaemons<I>> for OcrActor {
@@ -125,6 +125,7 @@ impl<I: ImageSource> Handler<RecognizeDaemons<I>> for OcrActor {
     fn handle(&mut self, msg: RecognizeDaemons<I>, _ctx: &mut Self::Context) -> Self::Result {
         log::trace!("OcrActor received RecognizeDaemons");
         let lines = self.recognize_text(&msg.source);
+        println!("{lines:#?}");
         todo!();
     }
 }

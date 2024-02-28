@@ -2,11 +2,10 @@
 
 use actix::prelude::*;
 use actors::{
-    codematrix::CodeMatrix,
-    ocr::{OcrActor, RecognizeCodeMatrix},
+    codematrix::CodeMatrix, daemon::Daemon, ocr::{OcrActor, RecognizeCodeMatrix}
 };
 
-use crate::toolbox::ocr::LocalImage;
+use crate::{actors::ocr::RecognizeDaemons, toolbox::ocr::LocalImage};
 
 mod actors;
 mod toolbox;
@@ -27,7 +26,8 @@ async fn main() {
         .await
         .expect("Sending message to OCR actor failed");
 
+    let path = "res/daemontest_fullspace.jpg";
+    let daemons: Vec<Daemon> = ocr_actor_addr.send(RecognizeDaemons { source: LocalImage { path }}).await.expect("Sending message to OCR actor failed");
     println!("{code_matrix:?}");
-
-    std::thread::sleep(std::time::Duration::from_secs(5));
+    println!("{daemons:?}");
 }
