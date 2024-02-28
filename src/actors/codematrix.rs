@@ -19,8 +19,17 @@ pub(crate) enum CodeMatrix {
     _FF,
 }
 
-impl From<&str> for CodeMatrix {
-    fn from(value: &str) -> Self {
+/// Errors that can occur when working with a code matrix
+pub(crate) enum CodeMatrixError {
+    /// The Levenshtein Difference between the input and any possible match
+    /// was the length of any possible match
+    TotalDifference,
+}
+
+impl TryFrom<&str> for CodeMatrix {
+    type Error = CodeMatrixError;
+
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
         let distances: [usize; 6] = [
             levenshtein_distance("1C", value),
             levenshtein_distance("55", value),
@@ -37,13 +46,16 @@ impl From<&str> for CodeMatrix {
                 index = i;
             }
         }
+        if least_distance == &2 {
+            return Err(CodeMatrixError::TotalDifference);
+        }
         match index {
-            0 => Self::_1C,
-            1 => Self::_55,
-            2 => Self::_7A,
-            3 => Self::_BD,
-            4 => Self::_E9,
-            5 => Self::_FF,
+            0 => Ok(Self::_1C),
+            1 => Ok(Self::_55),
+            2 => Ok(Self::_7A),
+            3 => Ok(Self::_BD),
+            4 => Ok(Self::_E9),
+            5 => Ok(Self::_FF),
             _ => unreachable!(),
         }
     }

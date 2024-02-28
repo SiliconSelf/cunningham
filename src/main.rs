@@ -17,7 +17,7 @@ async fn main() {
 
     let ocr_actor_addr = OcrActor::new().start();
 
-    let path = "res/matrixtest.jpg";
+    let path = "res/matrixtest_fullspace.jpg";
     let code_matrix: Vec<Vec<CodeMatrix>> = ocr_actor_addr
         .send(RecognizeCodeMatrix {
             source: LocalImage {
@@ -27,7 +27,7 @@ async fn main() {
         .await
         .expect("Sending message to OCR actor failed");
 
-    println!("{code_matrix:#?}");
+    println!("{code_matrix:?}");
 
     std::thread::sleep(std::time::Duration::from_secs(5));
 }
