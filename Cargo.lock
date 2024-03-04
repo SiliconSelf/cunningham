@@ -214,7 +214,7 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten",
+ "rten 0.4.0",
  "rten-imageio",
  "rten-imageproc",
  "rten-tensor",
@@ -426,12 +426,12 @@ dependencies = [
 
 [[package]]
 name = "ocrs"
-version = "0.4.0"
-source = "git+https://github.com/robertknight/ocrs.git#5de95fcb7d97c78deb1a8c3e7e511d7efbc70e5b"
+version = "0.5.0"
+source = "git+https://github.com/robertknight/ocrs.git#64da069978f0d18e3cfeb87db5861e0e5af5cbfc"
 dependencies = [
  "anyhow",
  "rayon",
- "rten",
+ "rten 0.5.0",
  "rten-imageproc",
  "rten-tensor",
  "wasm-bindgen",
@@ -549,6 +549,21 @@ name = "rten"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "602e8ac97ee394ef892bf6f0ef8ea87faa79848a67b320eb6d74d10ad462e033"
+dependencies = [
+ "flatbuffers",
+ "libm",
+ "rayon",
+ "rten-tensor",
+ "rten-vecmath",
+ "smallvec",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "rten"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17e83148868c7361a0008253ff00b960c931ef86c48a3787df6225e521ec5a66"
 dependencies = [
  "flatbuffers",
  "libm",
