@@ -214,7 +214,7 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten 0.4.0",
+ "rten",
  "rten-imageio",
  "rten-imageproc",
  "rten-tensor",
@@ -431,7 +431,7 @@ source = "git+https://github.com/robertknight/ocrs.git#64da069978f0d18e3cfeb87db
 dependencies = [
  "anyhow",
  "rayon",
- "rten 0.5.0",
+ "rten",
  "rten-imageproc",
  "rten-tensor",
  "wasm-bindgen",
@@ -542,21 +542,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4722d768eff46b75989dd134e5c353f0d6296e5aaa3132e776cbdb56be7731aa"
 dependencies = [
  "bitflags 1.3.2",
-]
-
-[[package]]
-name = "rten"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "602e8ac97ee394ef892bf6f0ef8ea87faa79848a67b320eb6d74d10ad462e033"
-dependencies = [
- "flatbuffers",
- "libm",
- "rayon",
- "rten-tensor",
- "rten-vecmath",
- "smallvec",
- "wasm-bindgen",
 ]
 
 [[package]]
