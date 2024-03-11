@@ -427,7 +427,7 @@ dependencies = [
 [[package]]
 name = "ocrs"
 version = "0.5.0"
-source = "git+https://github.com/robertknight/ocrs.git#64da069978f0d18e3cfeb87db5861e0e5af5cbfc"
+source = "git+https://github.com/robertknight/ocrs.git#78412c13b7c0824987938078e4b71c8b54821bb3"
 dependencies = [
  "anyhow",
  "rayon",
