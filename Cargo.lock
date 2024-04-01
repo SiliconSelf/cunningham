@@ -214,9 +214,9 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten",
+ "rten 0.5.0",
  "rten-imageio",
- "rten-imageproc 0.6.0",
+ "rten-imageproc",
  "rten-tensor 0.4.0",
  "simple_logger",
 ]
@@ -427,13 +427,13 @@ dependencies = [
 [[package]]
 name = "ocrs"
 version = "0.5.0"
-source = "git+https://github.com/robertknight/ocrs.git#78412c13b7c0824987938078e4b71c8b54821bb3"
+source = "git+https://github.com/robertknight/ocrs.git#29a36780e2c6709f940d4817b5c4946f790cffaa"
 dependencies = [
  "anyhow",
  "rayon",
- "rten",
- "rten-imageproc 0.4.0",
- "rten-tensor 0.4.0",
+ "rten 0.6.0",
+ "rten-imageproc",
+ "rten-tensor 0.6.0",
  "wasm-bindgen",
 ]
 
@@ -554,7 +554,22 @@ dependencies = [
  "libm",
  "rayon",
  "rten-tensor 0.4.0",
- "rten-vecmath",
+ "rten-vecmath 0.4.0",
+ "smallvec",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "rten"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6b69606effdec4cac8cf561b07c76d105e6566505cc8277e2af5e00e43e3bdce"
+dependencies = [
+ "flatbuffers",
+ "libm",
+ "rayon",
+ "rten-tensor 0.6.0",
+ "rten-vecmath 0.6.0",
  "smallvec",
  "wasm-bindgen",
 ]
@@ -568,15 +583,6 @@ dependencies = [
  "image",
  "png",
  "rten-tensor 0.6.0",
-]
-
-[[package]]
-name = "rten-imageproc"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2e020e0a2c223fcc0c53550ced865295e36c005466fd41efbd99418d6eb76a67"
-dependencies = [
- "rten-tensor 0.4.0",
 ]
 
 [[package]]
@@ -611,6 +617,12 @@ name = "rten-vecmath"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7217654557cc3983b10c45649fb955ced00b970349caa5cfcd7328316c91967d"
+
+[[package]]
+name = "rten-vecmath"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3a9a768c26f83baf08e062445a1feaec07907f94519cf6e5258717c25cb59f51"
 
 [[package]]
 name = "rustc-demangle"
