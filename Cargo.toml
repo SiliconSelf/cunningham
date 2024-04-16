@@ -58,7 +58,7 @@ workspace = true
 [dependencies]
 ocrs = { git = "https://github.com/robertknight/ocrs.git" }
 rten = { version = "0.7.0" }
-rten-imageproc = { version = "0.6.0" }
+rten-imageproc = { version = "0.7.0" }
 rten-tensor = { version = "0.6.0" }
 rten-imageio = { version = "0.7.0" }
 actix = "0.13.3"
