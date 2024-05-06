@@ -214,9 +214,9 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten 0.8.0",
+ "rten",
  "rten-imageio",
- "rten-imageproc",
+ "rten-imageproc 0.7.0",
  "rten-tensor 0.7.0",
  "simple_logger",
 ]
@@ -426,14 +426,15 @@ dependencies = [
 
 [[package]]
 name = "ocrs"
-version = "0.5.0"
-source = "git+https://github.com/robertknight/ocrs.git#0919bd2954507f8d538cfc02cd44aa9bf8ac84ff"
+version = "0.6.0"
+source = "git+https://github.com/robertknight/ocrs.git#ea67c9e70adf834e8a8632e50845b51fb38b1bc7"
 dependencies = [
  "anyhow",
  "rayon",
- "rten 0.7.0",
- "rten-imageproc",
- "rten-tensor 0.7.0",
+ "rten",
+ "rten-imageproc 0.8.0",
+ "rten-tensor 0.8.0",
+ "thiserror",
  "wasm-bindgen",
 ]
 
@@ -517,9 +518,9 @@ dependencies = [
 
 [[package]]
 name = "rayon"
-version = "1.8.1"
+version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa7237101a77a10773db45d62004a272517633fbcc3df19d96455ede1122e051"
+checksum = "b418a60154510ca1a002a752ca9714984e21e4241e804d32555251faf8b78ffa"
 dependencies = [
  "either",
  "rayon-core",
@@ -546,21 +547,6 @@ dependencies = [
 
 [[package]]
 name = "rten"
-version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "91c24b8e959f0aba1893b254621128509689508fbceef5e8fb3f0e36967fa31a"
-dependencies = [
- "flatbuffers",
- "libm",
- "rayon",
- "rten-tensor 0.7.0",
- "rten-vecmath 0.7.0",
- "smallvec",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "rten"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed8c84990cfa2d35011d40e0a8f5ad6d1a877dd80f513f04a2a070445cdd82f2"
@@ -569,7 +555,7 @@ dependencies = [
  "libm",
  "rayon",
  "rten-tensor 0.8.0",
- "rten-vecmath 0.8.0",
+ "rten-vecmath",
  "rustc-hash",
  "smallvec",
  "wasm-bindgen",
@@ -596,6 +582,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rten-imageproc"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6d26fd4e8299e8c9b37affb04836a6d1ac67fee62a157a7b06b3cdc9d9b66e40"
+dependencies = [
+ "rten-tensor 0.8.0",
+]
+
+[[package]]
 name = "rten-tensor"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -612,12 +607,6 @@ checksum = "4d2541dfaf69014c2e730f8386fc9647ddc0c3381b1fe21ce1640f0ed4f74357"
 dependencies = [
  "smallvec",
 ]
-
-[[package]]
-name = "rten-vecmath"
-version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b6ccb4c50101424b77a0d9c93434783df475f2d55107f034ec98ee0885dfcb6"
 
 [[package]]
 name = "rten-vecmath"
@@ -730,6 +719,26 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "thiserror"
+version = "1.0.59"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0126ad08bff79f29fc3ae6a55cc72352056dfff61e3ff8bb7129476d44b23aa"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.59"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1cd413b5d558b4c5bf3680e324a6fa5014e7b7c067a51e69dbdf47eb7148b66"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
