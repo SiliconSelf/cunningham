@@ -563,13 +563,13 @@ dependencies = [
 
 [[package]]
 name = "rten-imageio"
-version = "0.7.0"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5998fc139ada9b28e8114fb3923a841f797b162005d7a2439fc64e8aa663614"
+checksum = "e2cf8a71d80e033c9549a5cfd46353c792017525390130f9e0b5be33bf017e18"
 dependencies = [
  "image",
  "png",
- "rten-tensor 0.7.0",
+ "rten-tensor 0.8.0",
 ]
 
 [[package]]
