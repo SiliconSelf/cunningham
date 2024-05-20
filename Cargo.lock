@@ -214,7 +214,7 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten",
+ "rten 0.8.0",
  "rten-imageio",
  "rten-imageproc 0.7.0",
  "rten-tensor 0.7.0",
@@ -426,14 +426,14 @@ dependencies = [
 
 [[package]]
 name = "ocrs"
-version = "0.6.0"
-source = "git+https://github.com/robertknight/ocrs.git#ea67c9e70adf834e8a8632e50845b51fb38b1bc7"
+version = "0.7.0"
+source = "git+https://github.com/robertknight/ocrs.git#edad43a9c76349391b4f07425c622a87bf191f02"
 dependencies = [
  "anyhow",
  "rayon",
- "rten",
- "rten-imageproc 0.8.0",
- "rten-tensor 0.8.0",
+ "rten 0.9.0",
+ "rten-imageproc 0.9.0",
+ "rten-tensor 0.9.0",
  "thiserror",
  "wasm-bindgen",
 ]
@@ -555,7 +555,23 @@ dependencies = [
  "libm",
  "rayon",
  "rten-tensor 0.8.0",
- "rten-vecmath",
+ "rten-vecmath 0.8.0",
+ "rustc-hash",
+ "smallvec",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "rten"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cb9d6d80601e57cab46f477955be6e3be1a4c92ed0aebb3376e1f19d24e83bb1"
+dependencies = [
+ "flatbuffers",
+ "libm",
+ "rayon",
+ "rten-tensor 0.9.0",
+ "rten-vecmath 0.9.0",
  "rustc-hash",
  "smallvec",
  "wasm-bindgen",
@@ -583,11 +599,11 @@ dependencies = [
 
 [[package]]
 name = "rten-imageproc"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d26fd4e8299e8c9b37affb04836a6d1ac67fee62a157a7b06b3cdc9d9b66e40"
+checksum = "529fdef25f8232ebb08fb6cfc785ec97a7fb268bebc4895e36e8750e2bbeaa51"
 dependencies = [
- "rten-tensor 0.8.0",
+ "rten-tensor 0.9.0",
 ]
 
 [[package]]
@@ -609,10 +625,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "rten-tensor"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ffa78180a98337a43163e9da8f202120e9ae3b82366cccfb05a5a854e48cd581"
+dependencies = [
+ "smallvec",
+]
+
+[[package]]
 name = "rten-vecmath"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc89d64420a5b7a7d74e3b5cc9424029a2ce86906cdaed50491c44e6f1a090f8"
+
+[[package]]
+name = "rten-vecmath"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "495f48d459768d61ca37b418f79ac7aac3a707024c79fa49a14dd2c1ad8a2c0e"
 
 [[package]]
 name = "rustc-demangle"
