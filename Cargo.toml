@@ -61,6 +61,6 @@ rten = { version = "0.11.0" }
 rten-imageproc = { version = "0.7.0" }
 rten-tensor = { version = "0.11.0" }
 rten-imageio = { version = "0.8.0" }
-actix = "0.13.3"
+actix = "0.13.5"
 simple_logger = "4.3.3"
 log = "0.4.21"
