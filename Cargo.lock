@@ -217,7 +217,7 @@ dependencies = [
  "rten",
  "rten-imageio",
  "rten-imageproc",
- "rten-tensor 0.11.0",
+ "rten-tensor 0.12.0",
  "simple_logger",
 ]
 
@@ -619,6 +619,15 @@ name = "rten-tensor"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eb83a8292d28b4c79f17708d483dca3706538a86221f1a3373721877573f7f33"
+dependencies = [
+ "smallvec",
+]
+
+[[package]]
+name = "rten-tensor"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2c242504cb4afc7a3e0463b92fef057dabbdbeb0360f9ba8b46298c603b67d9b"
 dependencies = [
  "smallvec",
 ]
