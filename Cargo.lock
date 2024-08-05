@@ -214,9 +214,9 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten",
+ "rten 0.11.1",
  "rten-imageio",
- "rten-imageproc",
+ "rten-imageproc 0.11.0",
  "rten-tensor 0.11.0",
  "simple_logger",
 ]
@@ -443,13 +443,13 @@ dependencies = [
 [[package]]
 name = "ocrs"
 version = "0.8.0"
-source = "git+https://github.com/robertknight/ocrs.git#fe3e879c6359512351aefe8e21939b31e183449f"
+source = "git+https://github.com/robertknight/ocrs.git#6f37b2bc4e7ac3ca0f7b64eca4e757807e9d3968"
 dependencies = [
  "anyhow",
  "rayon",
- "rten",
- "rten-imageproc",
- "rten-tensor 0.11.0",
+ "rten 0.12.0",
+ "rten-imageproc 0.12.0",
+ "rten-tensor 0.12.0",
  "thiserror",
  "wasm-bindgen",
 ]
@@ -574,7 +574,25 @@ dependencies = [
  "rten-simd",
  "rten-tensor 0.11.0",
  "rten-vecmath",
- "rustc-hash",
+ "rustc-hash 1.1.0",
+ "smallvec",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "rten"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96c21cb34eef8506e9d0e3e124efc93c4c46196d23e28fda205a2168b1143fb0"
+dependencies = [
+ "flatbuffers",
+ "libm",
+ "num_cpus",
+ "rayon",
+ "rten-simd",
+ "rten-tensor 0.12.0",
+ "rten-vecmath",
+ "rustc-hash 2.0.0",
  "smallvec",
  "wasm-bindgen",
 ]
@@ -597,6 +615,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1974ad497f83f0a0e6f8cc1f948c1213bf701d02805797ccccc79181891371e"
 dependencies = [
  "rten-tensor 0.11.0",
+]
+
+[[package]]
+name = "rten-imageproc"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ddfbb437bd7fefdde2fbc9af3564007df80290253479b04d0f6d3bcb0da0aa8b"
+dependencies = [
+ "rten-tensor 0.12.0",
 ]
 
 [[package]]
@@ -624,6 +651,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rten-tensor"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2c242504cb4afc7a3e0463b92fef057dabbdbeb0360f9ba8b46298c603b67d9b"
+dependencies = [
+ "smallvec",
+]
+
+[[package]]
 name = "rten-vecmath"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -643,6 +679,12 @@ name = "rustc-hash"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
+
+[[package]]
+name = "rustc-hash"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "583034fd73374156e66797ed8e5b0d5690409c9226b22d87cb7f19821c05d152"
 
 [[package]]
 name = "rustc_version"
