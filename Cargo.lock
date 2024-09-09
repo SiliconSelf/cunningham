@@ -216,7 +216,7 @@ dependencies = [
  "ocrs",
  "rten",
  "rten-imageio",
- "rten-imageproc",
+ "rten-imageproc 0.13.1",
  "rten-tensor 0.13.1",
  "simple_logger",
 ]
@@ -448,7 +448,7 @@ dependencies = [
  "anyhow",
  "rayon",
  "rten",
- "rten-imageproc",
+ "rten-imageproc 0.11.0",
  "rten-tensor 0.11.0",
  "thiserror",
  "wasm-bindgen",
@@ -597,6 +597,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1974ad497f83f0a0e6f8cc1f948c1213bf701d02805797ccccc79181891371e"
 dependencies = [
  "rten-tensor 0.11.0",
+]
+
+[[package]]
+name = "rten-imageproc"
+version = "0.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2cbf57cb94ff55c8107d534114d23bc8116bb64d68da0927c972db150bea3279"
+dependencies = [
+ "rten-tensor 0.13.1",
 ]
 
 [[package]]
