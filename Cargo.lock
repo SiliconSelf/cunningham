@@ -208,7 +208,7 @@ dependencies = [
  "actix",
  "log",
  "ocrs",
- "rten 0.11.1",
+ "rten",
  "rten-imageio",
  "rten-imageproc",
  "rten-tensor 0.13.1",
@@ -443,7 +443,7 @@ source = "git+https://github.com/robertknight/ocrs.git#1613ffe7e5bdc7dba10591f86
 dependencies = [
  "anyhow",
  "rayon",
- "rten 0.13.1",
+ "rten",
  "rten-imageproc",
  "rten-tensor 0.13.1",
  "thiserror",
@@ -565,24 +565,6 @@ dependencies = [
 
 [[package]]
 name = "rten"
-version = "0.11.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13e9b807cdafc1b59df781fc028c61ac9d5a17e3080758233caf88a246090a70"
-dependencies = [
- "flatbuffers",
- "libm",
- "num_cpus",
- "rayon",
- "rten-simd",
- "rten-tensor 0.11.0",
- "rten-vecmath",
- "rustc-hash 1.1.0",
- "smallvec",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "rten"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "52026aa6d9bc40ac0d52bfeb4bc81d4fd5b7866825af1826ed7a4d74bd7574c4"
@@ -594,7 +576,7 @@ dependencies = [
  "rten-simd",
  "rten-tensor 0.13.1",
  "rten-vecmath",
- "rustc-hash 2.0.0",
+ "rustc-hash",
  "smallvec",
  "wasm-bindgen",
 ]
@@ -624,15 +606,6 @@ name = "rten-simd"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f1bb63fc8a157699e42a501cf43512871b20d3bea755f3ffac3ab63f1af10c4"
-
-[[package]]
-name = "rten-tensor"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb83a8292d28b4c79f17708d483dca3706538a86221f1a3373721877573f7f33"
-dependencies = [
- "smallvec",
-]
 
 [[package]]
 name = "rten-tensor"
@@ -666,12 +639,6 @@ name = "rustc-demangle"
 version = "0.1.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d626bb9dae77e28219937af045c257c28bfd3f69333c512553507f5f9798cb76"
-
-[[package]]
-name = "rustc-hash"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
 
 [[package]]
 name = "rustc-hash"
