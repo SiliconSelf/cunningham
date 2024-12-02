@@ -211,7 +211,7 @@ dependencies = [
  "rten 0.13.1",
  "rten-imageio",
  "rten-imageproc 0.13.1",
- "rten-tensor 0.13.1",
+ "rten-tensor 0.14.0",
  "simple_logger",
 ]
 
