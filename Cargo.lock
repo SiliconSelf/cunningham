@@ -445,7 +445,7 @@ dependencies = [
  "rayon",
  "rten 0.14.0",
  "rten-imageproc 0.14.0",
- "rten-tensor 0.14.0",
+ "rten-tensor 0.14.1",
  "thiserror",
  "wasm-bindgen",
 ]
@@ -591,7 +591,7 @@ dependencies = [
  "num_cpus",
  "rayon",
  "rten-simd 0.14.1",
- "rten-tensor 0.14.0",
+ "rten-tensor 0.14.1",
  "rten-vecmath 0.14.1",
  "rustc-hash",
  "smallvec",
@@ -600,13 +600,13 @@ dependencies = [
 
 [[package]]
 name = "rten-imageio"
-version = "0.14.0"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5c84c0f28e76c778e050713d3865b4e38ee0b1272a5409d528c5d90651a6006"
+checksum = "b11f96e4196327a129d9021b52a9dc690ce79b47b7336103de19e4be448cc6a0"
 dependencies = [
  "image",
  "png",
- "rten-tensor 0.14.0",
+ "rten-tensor 0.14.1",
 ]
 
 [[package]]
@@ -624,7 +624,7 @@ version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9e91b2ce3738cd5b7d38abb2a69007b9032402be65eca7074264a587a6334f0f"
 dependencies = [
- "rten-tensor 0.14.0",
+ "rten-tensor 0.14.1",
 ]
 
 [[package]]
@@ -650,9 +650,9 @@ dependencies = [
 
 [[package]]
 name = "rten-tensor"
-version = "0.14.0"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06450fce021c840a5b1bb555e273cc1ba554edb0f68a11ede9972ae09dd55125"
+checksum = "3537b3a982a7e5ed5d0487a6c708f5d89c1fd418830fd136c12fd9cffa7a85f2"
 dependencies = [
  "smallvec",
 ]
