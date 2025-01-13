@@ -600,13 +600,13 @@ dependencies = [
 
 [[package]]
 name = "rten-imageio"
-version = "0.14.0"
+version = "0.15.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5c84c0f28e76c778e050713d3865b4e38ee0b1272a5409d528c5d90651a6006"
+checksum = "e18f7d75836f26641aff7ddce897e2a285264944dc54d8b3c429d9ff1c0c524a"
 dependencies = [
  "image",
  "png",
- "rten-tensor 0.14.0",
+ "rten-tensor 0.15.1",
 ]
 
 [[package]]
@@ -653,6 +653,15 @@ name = "rten-tensor"
 version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "06450fce021c840a5b1bb555e273cc1ba554edb0f68a11ede9972ae09dd55125"
+dependencies = [
+ "smallvec",
+]
+
+[[package]]
+name = "rten-tensor"
+version = "0.15.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd317455d579ca1549d9b96fb1fb4b5906b90231f83282c180afe4a5a5b0ba8d"
 dependencies = [
  "smallvec",
 ]
